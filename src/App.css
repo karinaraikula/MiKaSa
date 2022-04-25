@@ -1,0 +1,8 @@
+table {
+  border-spacing: 0;
+}
+
+td {
+  padding: 1rem;
+  border-bottom: #ccc 1px solid;
+}
