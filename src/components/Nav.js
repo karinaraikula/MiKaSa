@@ -102,6 +102,30 @@ const Nav = () => {
                 </ListItemIcon>
                 <ListItemText primary="My Files" />
               </ListItemButton>
+              <ListItemButton component={Link} to="/Inspirations">
+                <ListItemIcon>
+                  <Folder />
+                </ListItemIcon>
+                <ListItemText primary="Inspiration" />
+              </ListItemButton>
+              <ListItemButton component={Link} to="/questions">
+                <ListItemIcon>
+                  <Folder />
+                </ListItemIcon>
+                <ListItemText primary="Questions" />
+              </ListItemButton>
+              <ListItemButton component={Link} to="/Reviews">
+                <ListItemIcon>
+                  <Folder />
+                </ListItemIcon>
+                <ListItemText primary="Reviews" />
+              </ListItemButton>
+              <ListItemButton component={Link} to="/Tips">
+                <ListItemIcon>
+                  <Folder />
+                </ListItemIcon>
+                <ListItemText primary="Tips" />
+              </ListItemButton>
             </>
           )}
         </List>
