@@ -17,9 +17,9 @@ const MediaTable = ({allFiles = true}) => {
         <CircularProgress />
       ) : (
         <ImageList
-          variant="masonry"
-          cols={windowSize.width > 768 ? 3 : 2}
-          gap={8}
+          variant="vowen"
+          cols={windowSize.width > 768 ? 3 : 1}
+          gap={9}
         >
           {mediaArray.map((item, index) => {
             return (

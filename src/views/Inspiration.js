@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import {Typography} from '@mui/material';
+import MediaTable from '../components/MediaTable';
 import BackButton from '../components/BackButton';
 
 const Inspiration = () => {
@@ -12,3 +13,5 @@ const Inspiration = () => {
     </>
   );
 };
+
+export default Inspiration;

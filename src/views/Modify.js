@@ -83,14 +83,14 @@ const Modify = () => {
   return (
     <>
       <Grid container>
-        <Grid item xs={12}>
+        <Grid item xs={12} sm={12}>
           <BackButton />
           <Typography component="h1" variant="h2" gutterBottom>
             Modify
           </Typography>
         </Grid>
 
-        <Grid item xs={12}>
+        <Grid item xs={12} sm={12}>
           <ValidatorForm onSubmit={handleSubmit}>
             <TextValidator
               fullWidth
@@ -126,12 +126,13 @@ const Modify = () => {
           </ValidatorForm>
         </Grid>
       </Grid>
+
       {file && (
-        <Grid container>
-          <Grid item xs={12}>
+        <Grid container flex>
+          <Grid item xs={12} sm={12}>
             <img
               style={{
-                width: '100%',
+                width: '40%',
                 filter: `
               brightness(${filterInputs.brightness}%)
               contrast(${filterInputs.contrast}%)
@@ -143,8 +144,8 @@ const Modify = () => {
               alt="preview"
             />
           </Grid>
-          <Grid container>
-            <Grid item xs={12}>
+          <Grid container flex>
+            <Grid item xs={12} sm={12}>
               <Typography>Brightness</Typography>
               <Slider
                 name="brightness"
@@ -156,7 +157,7 @@ const Modify = () => {
                 value={filterInputs.brightness}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} sm={12}>
               <Typography>Contrast</Typography>
               <Slider
                 name="contrast"
@@ -168,7 +169,7 @@ const Modify = () => {
                 value={filterInputs.contrast}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} sm={12}>
               <Typography>Saturation</Typography>
               <Slider
                 name="saturation"
@@ -180,7 +181,7 @@ const Modify = () => {
                 value={filterInputs.saturation}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} sm={12}>
               <Typography>Sepia</Typography>
               <Slider
                 name="sepia"

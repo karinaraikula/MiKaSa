@@ -102,7 +102,7 @@ const Nav = () => {
                 </ListItemIcon>
                 <ListItemText primary="My Files" />
               </ListItemButton>
-              <ListItemButton component={Link} to="/Inspirations">
+              <ListItemButton component={Link} to="/Inspiration">
                 <ListItemIcon>
                   <Folder />
                 </ListItemIcon>

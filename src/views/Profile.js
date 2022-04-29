@@ -49,12 +49,12 @@ const Profile = () => {
               <ListItem>
                 <ListItemAvatar sx={{width: '100%'}}>
                   <Avatar
-                    variant="square"
+                    variant="circular"
                     src={avatar.filename}
                     imgProps={{
                       alt: `${user.username}'s profile image`,
                     }}
-                    sx={{width: '100%', height: '30vh'}}
+                    sx={{width: '20vh', height: '20vh'}}
                   />
                 </ListItemAvatar>
               </ListItem>
