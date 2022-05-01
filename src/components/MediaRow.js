@@ -28,6 +28,7 @@ const MediaRow = ({file, userId, deleteMedia}) => {
 
   return (
     <ImageListItem key={file.file_id}>
+      <ImageListItemBar />
       <img
         src={file.thumbnails ? mediaUrl + file.thumbnails.w320 : 'logo512.png'}
         alt={file.title}

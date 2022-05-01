@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 import {
   AppBar,
   Box,
   Button,
+  Divider,
   Drawer,
   IconButton,
   List,
@@ -16,7 +18,17 @@ import {useContext, useEffect, useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import {MediaContext} from '../contexts/MediaContext';
 import {useUser} from '../hooks/ApiHooks';
-import {Home, AccountCircle, CloudUpload, Folder} from '@mui/icons-material';
+import {
+  Home,
+  AccountCircle,
+  CloudUpload,
+  Folder,
+  AirplaneTicket,
+  BeachAccess,
+  QuestionMark,
+  StarRate,
+  Help,
+} from '@mui/icons-material';
 
 const Nav = () => {
   const {user, setUser} = useContext(MediaContext);
@@ -43,14 +55,14 @@ const Nav = () => {
 
   return (
     <Box>
-      <AppBar position="static">
+      <AppBar position="static" sx={{width: '100%'}}>
         <Toolbar>
           <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{mr: 2}}
+            sx={{}}
             onClick={() => {
               setOpen(!open);
             }}
@@ -65,17 +77,9 @@ const Nav = () => {
           </Button>
         </Toolbar>
       </AppBar>
-      <Drawer
-        open={open}
-        onClose={() => {
-          setOpen(!open);
-        }}
-      >
-        <List
-          onClick={() => {
-            setOpen(!open);
-          }}
-        >
+      <Drawer sx={{width: '200px'}} variant="permanent" anchor="left">
+        <img src={'logo192.png'} alt="Logo" />
+        <List>
           <ListItemButton component={Link} to={'/home'}>
             <ListItemIcon>
               <Home />
@@ -102,27 +106,28 @@ const Nav = () => {
                 </ListItemIcon>
                 <ListItemText primary="My Files" />
               </ListItemButton>
-              <ListItemButton component={Link} to="/Inspiration">
+              <Divider />
+              <ListItemButton component={Link} to="/inspiration">
                 <ListItemIcon>
-                  <Folder />
+                  <AirplaneTicket />
                 </ListItemIcon>
                 <ListItemText primary="Inspiration" />
               </ListItemButton>
               <ListItemButton component={Link} to="/questions">
                 <ListItemIcon>
-                  <Folder />
+                  <Help />
                 </ListItemIcon>
                 <ListItemText primary="Questions" />
               </ListItemButton>
               <ListItemButton component={Link} to="/Reviews">
                 <ListItemIcon>
-                  <Folder />
+                  <BeachAccess />
                 </ListItemIcon>
                 <ListItemText primary="Reviews" />
               </ListItemButton>
               <ListItemButton component={Link} to="/Tips">
                 <ListItemIcon>
-                  <Folder />
+                  <StarRate />
                 </ListItemIcon>
                 <ListItemText primary="Tips" />
               </ListItemButton>

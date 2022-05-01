@@ -12,3 +12,4 @@ const Tips = () => {
     </>
   );
 };
+export default Tips;

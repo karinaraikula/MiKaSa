@@ -43,7 +43,7 @@ const Profile = () => {
         Profile
       </Typography>
       {user && (
-        <Card>
+        <Card flex sx={{justifyContent: 'center'}}>
           <CardContent>
             <List>
               <ListItem>

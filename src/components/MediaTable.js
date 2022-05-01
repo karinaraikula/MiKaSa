@@ -18,8 +18,9 @@ const MediaTable = ({allFiles = true}) => {
       ) : (
         <ImageList
           variant="vowen"
+          rowHeight={300}
           cols={windowSize.width > 768 ? 3 : 1}
-          gap={9}
+          gap={20}
         >
           {mediaArray.map((item, index) => {
             return (
