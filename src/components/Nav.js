@@ -28,6 +28,8 @@ import {
   QuestionMark,
   StarRate,
   Help,
+  AddCircleOutlineRounded,
+  LogoutRounded,
 } from '@mui/icons-material';
 
 const Nav = () => {
@@ -57,15 +59,35 @@ const Nav = () => {
     <Box>
       <AppBar position="static" sx={{width: '100%'}}>
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
-            MyApp
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              flexGrow: 2,
+              fontFamily: 'Montserrat',
+            }}
+          >
+            MiKaSa
           </Typography>
-          <Button component={Link} to="/upload" color="inherit">
-            <CloudUpload />
-
-            <ListItemText primary="Upload" />
+          <Button
+            component={Link}
+            to="/upload"
+            color="inherit"
+            sx={{
+              fontFamily: 'Montserrat',
+            }}
+          >
+            <AddCircleOutlineRounded />
+            <ListItemText primary="" />
           </Button>
-          <Button component={Link} to={user ? '/logout' : '/'} color="inherit">
+          <Button
+            component={Link}
+            to={user ? '/logout' : '/'}
+            color="inherit"
+            sx={{
+              fontFamily: 'Montserrat',
+            }}
+          >
             {user ? 'Logout' : 'Login'}
           </Button>
         </Toolbar>

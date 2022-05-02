@@ -9,12 +9,12 @@ const themeOptions = {
     },
   },
   typography: {
-    fontFamily: 'Lato',
+    fontFamily: 'Montserrat',
     body1: {
-      fontFamily: 'Droid Sans',
+      fontFamily: 'Montserrat',
     },
     body2: {
-      fontFamily: 'Droid Sans',
+      fontFamily: 'Montserrat',
     },
   },
   shape: {
