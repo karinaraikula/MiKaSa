@@ -51,8 +51,8 @@ const RegisterForm = ({setToggle}) => {
   };
 
   const {inputs, handleInputChange, handleSubmit} = useForm(
-    doRegister,
-    alkuarvot
+      doRegister,
+      alkuarvot,
   );
 
   useEffect(() => {
