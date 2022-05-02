@@ -32,9 +32,9 @@ const useMedia = (showAllFiles, userId, tag = false) => {
       }
 
       const allFiles = await Promise.all(
-        media.map(async (file) => {
-          return await fetchJson(`${baseUrl}media/${file.file_id}`);
-        })
+          media.map(async (file) => {
+            return await fetchJson(`${baseUrl}media/${file.file_id}`);
+          }),
       );
 
       setMediaArray(allFiles);

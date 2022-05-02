@@ -69,13 +69,13 @@ const Modify = () => {
   };
 
   const {inputs, handleInputChange, handleSubmit} = useForm(
-    doModify,
-    alkuarvot
+      doModify,
+      alkuarvot,
   );
 
   const {inputs: filterInputs, handleInputChange: handleSliderChange} = useForm(
-    null,
-    filters
+      null,
+      filters,
   );
 
   console.log(inputs, filterInputs);

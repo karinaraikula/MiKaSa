@@ -15,7 +15,7 @@
     "react-dom": "^17.0.2",
     "react-material-ui-form-validator": "^3.0.0",
     "react-router-dom": "^6.2.2",
-    "react-scripts": "5.0.0",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -43,12 +43,10 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.11.0",
+    "eslint": "^8.14.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
-    "prettier": "^2.5.1"
+    "prettier": "^2.6.2"
   },
   "homepage": "."
 }
