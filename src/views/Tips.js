@@ -9,7 +9,7 @@ const Tips = () => {
       <Typography component="h1" variant="h2">
         Tips
       </Typography>
-      <MediaTable tag="Inspiration" />
+      <MediaTable tag="Tips" />
     </>
   );
 };
