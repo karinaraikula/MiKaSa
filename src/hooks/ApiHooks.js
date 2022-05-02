@@ -17,14 +17,14 @@ const fetchJson = async (url, options = {}) => {
   }
 };
 
-const useMedia = (showAllFiles, userId) => {
+const useMedia = (showAllFiles, userId, tag = false) => {
   const [update, setUpdate] = useState(false);
   const [mediaArray, setMediaArray] = useState([]);
   const [loading, setLoading] = useState(false);
   const getMedia = async () => {
     try {
       setLoading(true);
-      let media = await useTag().getTag(appID);
+      let media = await useTag().getTag(!tag ? appID : tag + appID);
       // jos !showAllFiles, filteröi kirjautuneen
       // käyttäjän tiedostot media taulukkoon
       if (!showAllFiles) {

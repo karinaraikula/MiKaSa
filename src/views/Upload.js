@@ -21,7 +21,6 @@ const Upload = () => {
     title: '',
     description: '',
     file: null,
-    // tähän?
   };
 
   const filterarvot = {
@@ -29,6 +28,10 @@ const Upload = () => {
     contrast: 100,
     saturation: 100,
     sepia: 0,
+  };
+
+  const category = {
+    Radiobutton: '',
   };
 
   const validators = {
@@ -64,7 +67,14 @@ const Upload = () => {
         {
           file_id: mediaData.file_id,
           tag: appID,
-          // tähän?
+        },
+        token
+      );
+
+      await postTag(
+        {
+          file_id: mediaData.file_id,
+          tag: categoryInputs.Radiobutton + appID,
         },
         token
       );
@@ -84,6 +94,9 @@ const Upload = () => {
     filterarvot
   );
 
+  const {inputs: categoryInputs, handleInputChange: handleRadiobuttonChange} =
+    useForm(null, category);
+
   useEffect(() => {
     if (inputs.file) {
       const reader = new FileReader();
@@ -94,7 +107,7 @@ const Upload = () => {
     }
   }, [inputs.file]);
 
-  console.log(inputs, filterInputs);
+  console.log(inputs, filterInputs, categoryInputs);
 
   return (
     <>
@@ -123,10 +136,34 @@ const Upload = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} sm={8} sx={{}}>
-            <input type="radio" value="Male" name="gender" /> Inspiration
-            <input type="radio" value="Female" name="gender" /> Questions
-            <input type="radio" value="Other" name="gender" /> Reviews
-            <input type="radio" value="Other" name="gender" /> Tips
+            <input
+              type="radio"
+              value="Inspiration"
+              name="Radiobutton"
+              onChange={handleRadiobuttonChange}
+            />{' '}
+            Inspiration
+            <input
+              type="radio"
+              value="Questions"
+              name="Radiobutton"
+              onChange={handleRadiobuttonChange}
+            />{' '}
+            Questions
+            <input
+              type="radio"
+              value="Reviews"
+              name="Radiobutton"
+              onChange={handleRadiobuttonChange}
+            />{' '}
+            Reviews
+            <input
+              type="radio"
+              value="Tips"
+              name="Radiobutton"
+              onChange={handleRadiobuttonChange}
+            />{' '}
+            Tips
           </Grid>
           <Grid item xs={12} sm={8} sx={{}}>
             <ValidatorForm onSubmit={handleSubmit}>

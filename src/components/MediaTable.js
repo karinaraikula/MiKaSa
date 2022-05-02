@@ -6,9 +6,13 @@ import MediaRow from './MediaRow';
 import {useContext} from 'react';
 import {MediaContext} from '../contexts/MediaContext';
 
-const MediaTable = ({allFiles = true}) => {
+const MediaTable = ({allFiles = true, tag}) => {
   const {user} = useContext(MediaContext);
-  const {mediaArray, loading, deleteMedia} = useMedia(allFiles, user?.user_id);
+  const {mediaArray, loading, deleteMedia} = useMedia(
+    allFiles,
+    user?.user_id,
+    tag
+  );
   const windowSize = useWindowSize();
   console.log(mediaArray);
   return (
@@ -40,6 +44,7 @@ const MediaTable = ({allFiles = true}) => {
 
 MediaTable.propTypes = {
   allFiles: PropTypes.bool,
+  tag: PropTypes.string,
 };
 
 export default MediaTable;

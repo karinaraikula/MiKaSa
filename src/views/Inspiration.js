@@ -1,12 +1,15 @@
-/* eslint-disable no-unused-vars */
-import {Box, Container, Typography} from '@mui/material';
+import {Typography} from '@mui/material';
 import MediaTable from '../components/MediaTable';
-import BackButton from '../components/BackButton';
-import '../App.css';
-import Navigation from '../components/Navigation';
 
 const Inspiration = () => {
-  return <></>;
+  return (
+    <>
+      <Typography component="h1" variant="h2">
+        inspo
+      </Typography>
+      <MediaTable tag="Inspiration" />
+    </>
+  );
 };
 
 export default Inspiration;
