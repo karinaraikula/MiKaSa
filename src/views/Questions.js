@@ -7,7 +7,7 @@ const Questions = () => {
       <Typography component="h1" variant="h2">
         Questions
       </Typography>
-      <MediaTable tag=" Questions" />
+      <MediaTable tag="Questions" />
     </>
   );
 };
