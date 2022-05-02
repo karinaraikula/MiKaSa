@@ -57,21 +57,14 @@ const Nav = () => {
     <Box>
       <AppBar position="static" sx={{width: '100%'}}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{}}
-            onClick={() => {
-              setOpen(!open);
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
             MyApp
           </Typography>
+          <Button component={Link} to="/upload" color="inherit">
+            <CloudUpload />
+
+            <ListItemText primary="Upload" />
+          </Button>
           <Button component={Link} to={user ? '/logout' : '/'} color="inherit">
             {user ? 'Logout' : 'Login'}
           </Button>
@@ -94,18 +87,7 @@ const Nav = () => {
                 </ListItemIcon>
                 <ListItemText primary="Profile" />
               </ListItemButton>
-              <ListItemButton component={Link} to="/upload">
-                <ListItemIcon>
-                  <CloudUpload />
-                </ListItemIcon>
-                <ListItemText primary="Upload" />
-              </ListItemButton>
-              <ListItemButton component={Link} to="/myfiles">
-                <ListItemIcon>
-                  <Folder />
-                </ListItemIcon>
-                <ListItemText primary="My Files" />
-              </ListItemButton>
+
               <Divider />
               <ListItemButton component={Link} to="/inspiration">
                 <ListItemIcon>

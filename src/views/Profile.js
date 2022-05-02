@@ -9,12 +9,14 @@ import {
   List,
   ListItem,
   ListItemAvatar,
+  ListItemButton,
   ListItemIcon,
   ListItemText,
   Typography,
 } from '@mui/material';
-import {AccountCircle, Badge, ContactMail} from '@mui/icons-material';
+import {AccountCircle, Badge, ContactMail, Folder} from '@mui/icons-material';
 import BackButton from '../components/BackButton';
+import {Link} from 'react-router-dom';
 
 const Profile = () => {
   const {user} = useContext(MediaContext);
@@ -40,7 +42,7 @@ const Profile = () => {
     <>
       <BackButton />
       <Typography component="h1" variant="h2">
-        Profile
+        {`${user.username}'s profile`}
       </Typography>
       {user && (
         <Card flex sx={{justifyContent: 'center'}}>
@@ -76,6 +78,12 @@ const Profile = () => {
                 </ListItemIcon>
                 <ListItemText primary={user.full_name} />
               </ListItem>
+              <ListItemButton component={Link} to="/myfiles">
+                <ListItemIcon>
+                  <Folder />
+                </ListItemIcon>
+                <ListItemText primary="My Files" />
+              </ListItemButton>
             </List>
           </CardContent>
         </Card>
