@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable indent */
 // eslint-disable-next-line no-unused-vars
 import PropTypes from 'prop-types';
@@ -91,7 +92,6 @@ const RegisterForm = ({setToggle}) => {
 
       <Grid item xs={12} >
         <ValidatorForm onSubmit={handleSubmit}>
-          <Grid margin={3}>
             <TextValidator
               fullWidth
               placeholder="username"
@@ -101,9 +101,9 @@ const RegisterForm = ({setToggle}) => {
               value={inputs.username}
               validators={validators.username}
               errorMessages={errorMessages.username}
+              margin="normal"
+              required
             />
-          </Grid>
-          <Grid margin={3}>
             <TextValidator
               fullWidth
               label="password"
@@ -114,9 +114,9 @@ const RegisterForm = ({setToggle}) => {
               value={inputs.password}
               validators={validators.password}
               errorMessages={errorMessages.password}
+              margin="normal"
+              required
             />
-          </Grid>
-          <Grid margin={3}>
             <TextValidator
               fullWidth
               label="re-type password"
@@ -127,9 +127,9 @@ const RegisterForm = ({setToggle}) => {
               value={inputs.confirm}
               validators={validators.confirm}
               errorMessages={errorMessages.confirm}
+              margin="normal"
+              required
             />
-          </Grid>
-          <Grid margin={3}>
             <TextValidator
               fullWidth
               label="email"
@@ -140,9 +140,9 @@ const RegisterForm = ({setToggle}) => {
               value={inputs.email}
               validators={validators.email}
               errorMessages={errorMessages.email}
+              margin="normal"
+              required
             />
-          </Grid>
-          <Grid margin={3}>
             <TextValidator
               fullWidth
               label="full name"
@@ -152,12 +152,18 @@ const RegisterForm = ({setToggle}) => {
               value={inputs.full_name}
               validators={validators.full_name}
               errorMessages={errorMessages.full_name}
+              margin="normal"
+              required
             />
-          </Grid>
-          <Button fullWidth color="secondary" type="submit" variant="contained">
-            Register
-          </Button>
-        </ValidatorForm>
+            <Button fullWidth
+              color="secondary"
+              type="submit"
+              variant="contained"
+              sx={{mt: 3, mb: 2}}>
+              Register
+            </Button>
+            </ValidatorForm>
+
       </Grid>
     </Grid>
   );
