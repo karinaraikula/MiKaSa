@@ -7,9 +7,11 @@ import {
   Drawer,
   IconButton,
   List,
+  ListItem,
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  TextField,
   Toolbar,
   Typography,
 } from '@mui/material';
@@ -30,10 +32,12 @@ import {
   Help,
   AddCircleOutlineRounded,
   LogoutRounded,
+  Search,
+  TravelExploreOutlined,
 } from '@mui/icons-material';
 
 const Nav = () => {
-  const {user, setUser} = useContext(MediaContext);
+  const {user, setUser, hakusana, setHakusana} = useContext(MediaContext);
   const [open, setOpen] = useState(false);
   const {getUser} = useUser();
   const navigate = useNavigate();
@@ -47,6 +51,10 @@ const Nav = () => {
       setUser(null);
       navigate('/');
     }
+  };
+
+  const handleSearch = (event) => {
+    setHakusana(event.target.value);
   };
 
   useEffect(() => {
@@ -63,7 +71,7 @@ const Nav = () => {
             variant="h6"
             component="div"
             sx={{
-              flexGrow: 2,
+              alignSelf: 'left',
               fontFamily: 'Montserrat',
             }}
           >
@@ -74,12 +82,26 @@ const Nav = () => {
             to="/upload"
             color="inherit"
             sx={{
+              alignSelf: 'right',
               fontFamily: 'Montserrat',
             }}
           >
-            <AddCircleOutlineRounded />
+            <AddCircleOutlineRounded fontSize="large" />
             <ListItemText primary="" />
           </Button>
+          <ListItem
+            sx={{
+              fontFamily: 'Montserrat',
+            }}
+          >
+            <TravelExploreOutlined />
+
+            <TextField
+              label="search"
+              value={hakusana}
+              onChange={handleSearch}
+            ></TextField>
+          </ListItem>
           <Button
             component={Link}
             to={user ? '/logout' : '/'}
@@ -108,6 +130,12 @@ const Nav = () => {
                   <AccountCircle />
                 </ListItemIcon>
                 <ListItemText primary="Profile" />
+              </ListItemButton>
+              <ListItemButton component={Link} to="/Favourites">
+                <ListItemIcon>
+                  <StarRate />
+                </ListItemIcon>
+                <ListItemText primary="Favourites" />
               </ListItemButton>
 
               <Divider />

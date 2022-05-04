@@ -3,6 +3,5 @@
   "singleQuote": true,
   "tabWidth": 2,
   "useTabs": false,
-  "bracketSpacing": false,
-  "formatOnSave":true
+  "bracketSpacing": false
 }

@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import {
   Button,
   Card,
@@ -64,19 +65,19 @@ const Upload = () => {
       // tähän?
       const mediaData = await postMedia(formdata, token);
       const tagData = await postTag(
-          {
-            file_id: mediaData.file_id,
-            tag: appID,
-          },
-          token,
+        {
+          file_id: mediaData.file_id,
+          tag: appID,
+        },
+        token,
       );
 
       await postTag(
-          {
-            file_id: mediaData.file_id,
-            tag: categoryInputs.Radiobutton + appID,
-          },
-          token,
+        {
+          file_id: mediaData.file_id,
+          tag: categoryInputs.Radiobutton + appID,
+        },
+        token,
       );
       confirm(tagData.message) && navigate('/home');
     } catch (err) {
@@ -85,13 +86,13 @@ const Upload = () => {
   };
 
   const {inputs, handleInputChange, handleSubmit} = useForm(
-      doUpload,
-      alkuarvot,
+    doUpload,
+    alkuarvot,
   );
 
   const {inputs: filterInputs, handleInputChange: handleSliderChange} = useForm(
-      null,
-      filterarvot,
+    null,
+    filterarvot,
   );
 
   const {inputs: categoryInputs, handleInputChange: handleRadiobuttonChange} =

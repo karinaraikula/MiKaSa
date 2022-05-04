@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 // eslint-disable-next-line no-unused-vars
 import PropTypes from 'prop-types';
 import {useUser} from '../hooks/ApiHooks';
@@ -51,8 +52,8 @@ const RegisterForm = ({setToggle}) => {
   };
 
   const {inputs, handleInputChange, handleSubmit} = useForm(
-      doRegister,
-      alkuarvot,
+    doRegister,
+    alkuarvot,
   );
 
   useEffect(() => {

@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 import {useState} from 'react';
 
 const useForm = (callback, initState) => {
@@ -15,9 +16,9 @@ const useForm = (callback, initState) => {
     setInputs((inputs) => {
       return {
         ...inputs,
-        [event.target.name]: event.target.files ?
-          event.target.files[0] :
-          event.target.value,
+        [event.target.name]: event.target.files
+          ? event.target.files[0]
+          : event.target.value,
       };
     });
   };
