@@ -7,6 +7,9 @@ const themeOptions = {
     secondary: {
       main: '#69364B',
     },
+    harmaa: {
+      main: '#F5F5F5',
+    },
   },
   typography: {
     fontFamily: 'Montserrat',
