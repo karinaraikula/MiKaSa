@@ -2,10 +2,10 @@ const themeOptions = {
   palette: {
     type: 'light',
     primary: {
-      main: '#00104a',
+      main: '#C57B9A',
     },
     secondary: {
-      main: '#d60202',
+      main: '#69364B',
     },
   },
   typography: {

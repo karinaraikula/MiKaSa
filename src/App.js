@@ -19,6 +19,7 @@ import Inspiration from './views/Inspiration';
 import Questions from './views/Questions';
 import Tips from './views/Tips';
 import Reviews from './views/Reviews';
+import Favourites from './views/Favourites';
 
 const theme = createTheme(themeOptions);
 
@@ -43,6 +44,7 @@ const App = () => {
               <Route path="/questions" element={<Questions />} />
               <Route path="/tips" element={<Tips />} />
               <Route path="/reviews" element={<Reviews />} />
+              <Route path="/favourites" element={<Favourites />} />
             </Routes>
           </Container>
         </ThemeProvider>

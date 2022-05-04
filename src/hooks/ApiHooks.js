@@ -1,4 +1,4 @@
-// TODO: add necessary imports
+/* eslint-disable indent */
 import {useEffect, useState} from 'react';
 import {appID, baseUrl} from '../utils/variables';
 
@@ -21,6 +21,7 @@ const useMedia = (showAllFiles, userId, tag = false) => {
   const [update, setUpdate] = useState(false);
   const [mediaArray, setMediaArray] = useState([]);
   const [loading, setLoading] = useState(false);
+
   const getMedia = async () => {
     try {
       setLoading(true);
@@ -32,9 +33,9 @@ const useMedia = (showAllFiles, userId, tag = false) => {
       }
 
       const allFiles = await Promise.all(
-          media.map(async (file) => {
-            return await fetchJson(`${baseUrl}media/${file.file_id}`);
-          }),
+        media.map(async (file) => {
+          return await fetchJson(`${baseUrl}media/${file.file_id}`);
+        }),
       );
 
       setMediaArray(allFiles);
@@ -175,4 +176,62 @@ const useTag = () => {
   return {getTag, postTag};
 };
 
-export {useMedia, useLogin, useUser, useTag};
+// https://media.mw.metropolia.fi/wbma/docs/#api-Favourite-GetFileFavourites
+const useFavourite = (avain = '') => {
+  const [favouriteMedia, setFavourites] = useState([]);
+  const postFavourite = async (fileId, token) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-access-token': token,
+      },
+      body: JSON.stringify({file_id: fileId}),
+    };
+    return await fetchJson(`${baseUrl}favourites`, options);
+  };
+
+  const getFavouritesByFileId = async (fileId) => {
+    return await fetchJson(`${baseUrl}favourites/file/${fileId}`);
+  };
+
+  const getFavourites = async () => {
+    const options = {
+      method: 'GET',
+      headers: {
+        'x-access-token': avain,
+      },
+    };
+    return await fetchJson(`${baseUrl}favourites`, options);
+  };
+
+  const deleteFavourite = async (fileId, token) => {
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'x-access-token': token,
+      },
+    };
+    return await fetchJson(`${baseUrl}favourites/file/${fileId}`, options);
+  };
+  useEffect(() => {
+    const fetchMoro = async () => {
+      const moro = await getFavourites();
+      console.log(moro);
+      setFavourites(moro);
+    };
+    if (avain.length > 0) {
+      fetchMoro();
+    }
+  }, []);
+
+  return {
+    postFavourite,
+    getFavouritesByFileId,
+    deleteFavourite,
+    getFavourites,
+    favouriteMedia,
+  };
+};
+
+export {useMedia, useLogin, useUser, useTag, useFavourite};
