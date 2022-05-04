@@ -53,8 +53,8 @@ const Profile = () => {
         }}>
           <CardContent>
             <List>
-              <Box display="grid" >
-                <Box>
+              <Box sx={{display: 'flex'}}>
+                <Box sx={{display: 'flex'}}>
                   <ListItem>
                     <ListItemAvatar>
                       <Avatar
@@ -68,7 +68,7 @@ const Profile = () => {
                     </ListItemAvatar>
                   </ListItem>
                 </Box>
-                <Box>
+                <Box sx={{d: 'flex', fd: 'column', alignSelf: 'center'}}>
                   <ListItem>
                     <ListItemIcon>
                       <AccountCircle />
