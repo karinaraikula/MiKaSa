@@ -89,9 +89,9 @@ const RegisterForm = ({setToggle}) => {
         </Typography>
       </Grid>
 
-      <Grid item xs={12}>
+      <Grid item xs={12} >
         <ValidatorForm onSubmit={handleSubmit}>
-          <Grid>
+          <Grid margin={3}>
             <TextValidator
               fullWidth
               placeholder="username"
@@ -103,7 +103,7 @@ const RegisterForm = ({setToggle}) => {
               errorMessages={errorMessages.username}
             />
           </Grid>
-          <Grid>
+          <Grid margin={3}>
             <TextValidator
               fullWidth
               label="password"
@@ -115,7 +115,8 @@ const RegisterForm = ({setToggle}) => {
               validators={validators.password}
               errorMessages={errorMessages.password}
             />
-          </Grid><Grid>
+          </Grid>
+          <Grid margin={3}>
             <TextValidator
               fullWidth
               label="re-type password"
@@ -128,7 +129,7 @@ const RegisterForm = ({setToggle}) => {
               errorMessages={errorMessages.confirm}
             />
           </Grid>
-          <Grid>
+          <Grid margin={3}>
             <TextValidator
               fullWidth
               label="email"
@@ -141,7 +142,7 @@ const RegisterForm = ({setToggle}) => {
               errorMessages={errorMessages.email}
             />
           </Grid>
-          <Grid>
+          <Grid margin={3}>
             <TextValidator
               fullWidth
               label="full name"
@@ -153,7 +154,7 @@ const RegisterForm = ({setToggle}) => {
               errorMessages={errorMessages.full_name}
             />
           </Grid>
-          <Button fullWidth color="primary" type="submit" variant="contained">
+          <Button fullWidth color="secondary" type="submit" variant="contained">
             Register
           </Button>
         </ValidatorForm>

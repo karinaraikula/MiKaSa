@@ -33,7 +33,7 @@ const LoginForm = () => {
   console.log(inputs);
   return (
     <Grid container>
-      <Grid item xs={12}>
+      <Grid item xs={12} margin={3}>
         <Typography component="h1" variant="h2" gutterBottom>
           Login
         </Typography>
@@ -41,26 +41,28 @@ const LoginForm = () => {
 
       <Grid item xs={12}>
         <form onSubmit={handleSubmit}>
-          <TextField
-            fullWidth
-            margin='normal'
-            label="username"
-            placeholder="username"
-            name="username"
-            onChange={handleInputChange}
-            value={inputs.username}
-          />
-          <TextField
-            fullWidth
-            margin='normal'
-            label="password"
-            placeholder="password"
-            name="password"
-            type="password"
-            onChange={handleInputChange}
-            value={inputs.password}
-          />
-          <Button fullWidth color="primary" type="submit" variant="contained">
+          <Grid margin={3}>
+            <TextField
+              fullWidth
+              label="username"
+              placeholder="username"
+              name="username"
+              onChange={handleInputChange}
+              value={inputs.username}
+            />
+          </Grid>
+          <Grid margin={3}>
+            <TextField
+              fullWidth
+              label="password"
+              placeholder="password"
+              name="password"
+              type="password"
+              onChange={handleInputChange}
+              value={inputs.password}
+            />
+          </Grid>
+          <Button fullWidth color="secondary" type="submit" variant="contained">
             Login
           </Button>
         </form>
