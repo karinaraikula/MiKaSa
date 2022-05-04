@@ -65,21 +65,21 @@ const Nav = () => {
 
   return (
     <Box>
-      <AppBar position="static" sx={{width: '100%'}}>
-        <Toolbar>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              alignSelf: 'left',
-              fontFamily: 'Montserrat',
-            }}
-          >
-            MiKaSa
-          </Typography>
+      {user && (
+        <>
+          <AppBar position="static" sx={{width: '100%'}}>
+            <Toolbar>
+              <Typography
+                variant="h6"
+                component="div"
+                sx={{
+                  alignSelf: 'left',
+                  fontFamily: 'Montserrat',
+                }}
+              >
+                MiKaSa
+              </Typography>
 
-          {user && (
-            <>
               <Button
                 component={Link}
                 to="/upload"
@@ -115,10 +115,10 @@ const Nav = () => {
               >
                 {user ? 'Logout' : 'Login'}
               </Button>
-            </>
-          )}
-        </Toolbar>
-      </AppBar>
+            </Toolbar>
+          </AppBar>
+        </>
+      )}
       {user && (
         <>
           <Drawer sx={{width: '200px'}} variant="permanent" anchor="left">
