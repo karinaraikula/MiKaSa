@@ -2,8 +2,10 @@ import {useContext, useEffect, useState} from 'react';
 import {MediaContext} from '../contexts/MediaContext';
 import {useTag} from '../hooks/ApiHooks';
 import {mediaUrl} from '../utils/variables';
+import MediaTable from '../components/MediaTable';
 import {
   Avatar,
+  Box,
   Card,
   CardContent,
   List,
@@ -45,49 +47,59 @@ const Profile = () => {
         {`${user.username}'s profile`}
       </Typography>
       {user && (
-        <Card flex sx={{justifyContent: 'center'}}>
+        <Card sx={{
+          margin: '1rem auto',
+          padding: '1rem',
+        }}>
           <CardContent>
             <List>
-              <ListItem>
-                <ListItemAvatar sx={{width: '100%'}}>
-                  <Avatar
-                    variant="circular"
-                    src={avatar.filename}
-                    imgProps={{
-                      alt: `${user.username}'s profile image`,
-                    }}
-                    sx={{width: '20vh', height: '20vh'}}
-                  />
-                </ListItemAvatar>
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <AccountCircle />
-                </ListItemIcon>
-                <ListItemText primary={user.username} />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <ContactMail />
-                </ListItemIcon>
-                <ListItemText primary={user.email} />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <Badge />
-                </ListItemIcon>
-                <ListItemText primary={user.full_name} />
-              </ListItem>
-              <ListItemButton component={Link} to="/myfiles">
-                <ListItemIcon>
-                  <Folder />
-                </ListItemIcon>
-                <ListItemText primary="My Files" />
-              </ListItemButton>
+              <Box display="grid" >
+                <Box>
+                  <ListItem>
+                    <ListItemAvatar>
+                      <Avatar
+                        variant="circular"
+                        src={avatar.filename}
+                        imgProps={{
+                          alt: `${user.username}'s profile image`,
+                        }}
+                        sx={{width: '20vh', height: '20vh'}}
+                      />
+                    </ListItemAvatar>
+                  </ListItem>
+                </Box>
+                <Box>
+                  <ListItem>
+                    <ListItemIcon>
+                      <AccountCircle />
+                    </ListItemIcon>
+                    <ListItemText primary={user.username} />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemIcon>
+                      <ContactMail />
+                    </ListItemIcon>
+                    <ListItemText primary={user.email} />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemIcon>
+                      <Badge />
+                    </ListItemIcon>
+                    <ListItemText primary={user.full_name} />
+                  </ListItem>
+                  <ListItemButton component={Link} to="/favourites">
+                    <ListItemIcon>
+                      <Folder />
+                    </ListItemIcon>
+                    <ListItemText primary="Favourites" />
+                  </ListItemButton>
+                </Box>
+              </Box>
             </List>
           </CardContent>
         </Card>
       )}
+      <MediaTable allFiles={false} />
     </>
   );
 };

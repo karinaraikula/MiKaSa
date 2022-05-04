@@ -66,7 +66,7 @@ const MediaTable = ({allFiles = true, tag, favourites = false}) => {
                 deleteMedia={deleteMedia}
               />
             );
-          })}
+          }).reverse()}
         </ImageList>
       )}
     </>
