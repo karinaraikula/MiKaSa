@@ -114,17 +114,18 @@ const Nav = () => {
           </Button>
         </Toolbar>
       </AppBar>
-      <Drawer sx={{width: '200px'}} variant="permanent" anchor="left">
-        <img src={'logo192.png'} alt="Logo" />
-        <List>
-          <ListItemButton component={Link} to={'/home'}>
-            <ListItemIcon>
-              <Home />
-            </ListItemIcon>
-            <ListItemText primary="Home" />
-          </ListItemButton>
-          {user && (
-            <>
+      {user && (
+        <>
+          <Drawer sx={{width: '200px'}} variant="permanent" anchor="left">
+            <img src={'logo192.png'} alt="Logo" />
+            <List>
+              <ListItemButton component={Link} to={'/home'}>
+                <ListItemIcon>
+                  <Home />
+                </ListItemIcon>
+                <ListItemText primary="Home" />
+              </ListItemButton>
+
               <ListItemButton component={Link} to="/profile">
                 <ListItemIcon>
                   <AccountCircle />
@@ -163,10 +164,10 @@ const Nav = () => {
                 </ListItemIcon>
                 <ListItemText primary="Tips" />
               </ListItemButton>
-            </>
-          )}
-        </List>
-      </Drawer>
+            </List>
+          </Drawer>
+        </>
+      )}
     </Box>
   );
 };
