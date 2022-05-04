@@ -77,41 +77,46 @@ const Nav = () => {
           >
             MiKaSa
           </Typography>
-          <Button
-            component={Link}
-            to="/upload"
-            color="inherit"
-            sx={{
-              alignSelf: 'right',
-              fontFamily: 'Montserrat',
-            }}
-          >
-            <AddCircleOutlineRounded fontSize="large" />
-            <ListItemText primary="" />
-          </Button>
-          <ListItem
-            sx={{
-              fontFamily: 'Montserrat',
-            }}
-          >
-            <TravelExploreOutlined />
 
-            <TextField
-              label="search"
-              value={hakusana}
-              onChange={handleSearch}
-            ></TextField>
-          </ListItem>
-          <Button
-            component={Link}
-            to={user ? '/logout' : '/'}
-            color="inherit"
-            sx={{
-              fontFamily: 'Montserrat',
-            }}
-          >
-            {user ? 'Logout' : 'Login'}
-          </Button>
+          {user && (
+            <>
+              <Button
+                component={Link}
+                to="/upload"
+                color="inherit"
+                sx={{
+                  alignSelf: 'right',
+                  fontFamily: 'Montserrat',
+                }}
+              >
+                <AddCircleOutlineRounded fontSize="large" />
+                <ListItemText primary="" />
+              </Button>
+              <ListItem
+                sx={{
+                  fontFamily: 'Montserrat',
+                }}
+              >
+                <TravelExploreOutlined />
+
+                <TextField
+                  label="search"
+                  value={hakusana}
+                  onChange={handleSearch}
+                ></TextField>
+              </ListItem>
+              <Button
+                component={Link}
+                to={user ? '/logout' : '/'}
+                color="inherit"
+                sx={{
+                  fontFamily: 'Montserrat',
+                }}
+              >
+                {user ? 'Logout' : 'Login'}
+              </Button>
+            </>
+          )}
         </Toolbar>
       </AppBar>
       {user && (
