@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import {Button, Grid, TextField, Typography} from '@mui/material';
 import {useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
@@ -41,6 +42,8 @@ const LoginForm = () => {
       <Grid item xs={12}>
         <form onSubmit={handleSubmit}>
           <TextField
+            margin="normal"
+            required
             fullWidth
             label="username"
             placeholder="username"
@@ -49,6 +52,8 @@ const LoginForm = () => {
             value={inputs.username}
           />
           <TextField
+            margin="normal"
+            required
             fullWidth
             label="password"
             placeholder="password"
@@ -57,7 +62,12 @@ const LoginForm = () => {
             onChange={handleInputChange}
             value={inputs.password}
           />
-          <Button fullWidth color="primary" type="submit" variant="contained">
+          <Button
+            fullWidth
+            color="secondary"
+            type="submit"
+            variant="contained"
+            sx={{mt: 3, mb: 2}}>
             Login
           </Button>
         </form>

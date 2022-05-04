@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable indent */
 // eslint-disable-next-line no-unused-vars
 import PropTypes from 'prop-types';
@@ -89,65 +90,80 @@ const RegisterForm = ({setToggle}) => {
         </Typography>
       </Grid>
 
-      <Grid item xs={12}>
+      <Grid item xs={12} >
         <ValidatorForm onSubmit={handleSubmit}>
-          <TextValidator
-            fullWidth
-            placeholder="username"
-            label="username"
-            name="username"
-            onChange={handleInputChange}
-            value={inputs.username}
-            validators={validators.username}
-            errorMessages={errorMessages.username}
-          />
-          <TextValidator
-            fullWidth
-            label="password"
-            placeholder="password"
-            name="password"
-            type="password"
-            onChange={handleInputChange}
-            value={inputs.password}
-            validators={validators.password}
-            errorMessages={errorMessages.password}
-          />
-          <TextValidator
-            fullWidth
-            label="re-type password"
-            placeholder="re-type password"
-            name="confirm"
-            type="password"
-            onChange={handleInputChange}
-            value={inputs.confirm}
-            validators={validators.confirm}
-            errorMessages={errorMessages.confirm}
-          />
-          <TextValidator
-            fullWidth
-            label="email"
-            placeholder="email"
-            name="email"
-            type="email"
-            onChange={handleInputChange}
-            value={inputs.email}
-            validators={validators.email}
-            errorMessages={errorMessages.email}
-          />
-          <TextValidator
-            fullWidth
-            label="full name"
-            placeholder="full name"
-            name="full_name"
-            onChange={handleInputChange}
-            value={inputs.full_name}
-            validators={validators.full_name}
-            errorMessages={errorMessages.full_name}
-          />
-          <Button fullWidth color="primary" type="submit" variant="contained">
-            Register
-          </Button>
-        </ValidatorForm>
+            <TextValidator
+              fullWidth
+              placeholder="username"
+              label="username"
+              name="username"
+              onChange={handleInputChange}
+              value={inputs.username}
+              validators={validators.username}
+              errorMessages={errorMessages.username}
+              margin="normal"
+              required
+            />
+            <TextValidator
+              fullWidth
+              label="password"
+              placeholder="password"
+              name="password"
+              type="password"
+              onChange={handleInputChange}
+              value={inputs.password}
+              validators={validators.password}
+              errorMessages={errorMessages.password}
+              margin="normal"
+              required
+            />
+            <TextValidator
+              fullWidth
+              label="re-type password"
+              placeholder="re-type password"
+              name="confirm"
+              type="password"
+              onChange={handleInputChange}
+              value={inputs.confirm}
+              validators={validators.confirm}
+              errorMessages={errorMessages.confirm}
+              margin="normal"
+              required
+            />
+            <TextValidator
+              fullWidth
+              label="email"
+              placeholder="email"
+              name="email"
+              type="email"
+              onChange={handleInputChange}
+              value={inputs.email}
+              validators={validators.email}
+              errorMessages={errorMessages.email}
+              margin="normal"
+              required
+            />
+            <TextValidator
+              fullWidth
+              label="full name"
+              placeholder="full name"
+              name="full_name"
+              onChange={handleInputChange}
+              value={inputs.full_name}
+              validators={validators.full_name}
+              errorMessages={errorMessages.full_name}
+              margin="normal"
+              required
+            />
+            <Button fullWidth
+              color="secondary"
+              type="submit"
+              variant="contained"
+              sx={{mt: 3, mb: 2}}>
+              Register
+            </Button>
+            </ValidatorForm>
+
       </Grid>
     </Grid>
   );
