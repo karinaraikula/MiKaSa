@@ -6,7 +6,7 @@ const Logout = () => {
   const [user, setUser] = useContext(MediaContext);
   setUser(null);
   localStorage.clear();
-  return <>{!user ? <Navigate to="/login" /> : <div>Loading...</div>}</>;
+  return <>{!user ? <Navigate to="/" /> : <div>Loading...</div>}</>;
 };
 
 export default Logout;
