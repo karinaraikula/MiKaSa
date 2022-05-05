@@ -131,12 +131,13 @@ const Upload = () => {
             justifyContent: 'center',
           }}
         >
-          <Grid item xs={12} sm={8} sx={{}}>
+          <Grid item xs={12} sm={8} sx={{textAlign: 'center'}}>
             <Typography component="h1" variant="h2" gutterBottom>
               Upload
             </Typography>
           </Grid>
-          <Grid item xs={12} sm={8} sx={{}}>
+          <Grid item xs={12} sm={8}
+           sx={{textAlign: 'center', padding: '1em'}}>
             <input
               type="radio"
               value="Inspiration"
@@ -144,13 +145,6 @@ const Upload = () => {
               onChange={handleRadiobuttonChange}
             />{' '}
             Inspiration
-            <input
-              type="radio"
-              value="Questions"
-              name="Radiobutton"
-              onChange={handleRadiobuttonChange}
-            />{' '}
-            Questions
             <input
               type="radio"
               value="Reviews"
