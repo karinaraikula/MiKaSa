@@ -69,7 +69,10 @@ const Nav = () => {
         <>
           <AppBar position="static" sx={{width: '100%'}}>
             <Toolbar>
-              <img src={'logo2.png'} alt="Logo" />
+              <Button component={Link}
+                to="/home">
+                <img src={'logo2.png'} alt="Logo" />
+              </Button>
 
               <Button
                 component={Link}
@@ -115,7 +118,10 @@ const Nav = () => {
           <Drawer
             sx={{width: '200px'}}
             variant="permanent" anchor="left">
-            <img src={'logo1.png'} alt="Logo" />
+            <Button component={Link}
+              to="/home">
+              <img src={'logo1.png'} alt="Logo" />
+            </Button>
             <List>
               <ListItemButton component={Link} to={'/home'}>
                 <ListItemIcon>

@@ -16,22 +16,17 @@ const Tips = () => {
         <CardContent
           sx={{
             margin: 'auto',
-            width: '50%',
+            width: '80%',
           }}
         >
           <Typography component="h1" variant="h2">
             Tips
           </Typography>
           <Typography component="p">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industrys standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+          Learn from others or share the best tips collected along the way!
+            <br></br>Tell others what to pack for a backpacking trip in Norway,
+          how to manage without <br></br>speaking a word of the local language
+          or how to survive a week in the jungle.
           </Typography>
         </CardContent>
       </Card>
