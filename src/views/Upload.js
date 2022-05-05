@@ -117,7 +117,7 @@ const Upload = () => {
         xs={12}
         sm={8}
         sx={{
-          width: '50%',
+          width: '70%',
           margin: 'auto',
           padding: '4vh',
           justifyContent: 'center',
@@ -137,7 +137,12 @@ const Upload = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} sm={8}
-           sx={{textAlign: 'center', padding: '1em'}}>
+           sx={{
+            textAlign: 'left',
+            padding: '1em',
+            display: 'flex',
+            flexWrap: 'nowrap',
+            flexDirection: 'column'}}>
             <input
               type="radio"
               value="Inspiration"
@@ -170,9 +175,10 @@ const Upload = () => {
                 value={inputs.title}
                 validators={validators.title}
                 errorMessages={errorMessages.title}
+                sx={{mt: 2, mb: 2}}
               />
               <TextareaAutosize
-                style={{width: 380, borderRadius: 10}}
+                style={{width: '100%', borderRadius: 10}}
                 multiLine
                 minRows={4}
                 placeholder="description"
@@ -181,6 +187,7 @@ const Upload = () => {
                 value={inputs.description}
                 validators={validators.description}
                 errorMessages={errorMessages.description}
+                sx={{mt: 2, mb: 2}}
               />
 
               <TextValidator
@@ -189,6 +196,7 @@ const Upload = () => {
                 name="file"
                 accept="image/*, video/*, audio/*"
                 onChange={handleInputChange}
+                sx={{mt: 2, mb: 2}}
               />
 
               {loading ? (
@@ -199,6 +207,7 @@ const Upload = () => {
                   color="primary"
                   type="submit"
                   variant="contained"
+                  sx={{mb: 2}}
                   disabled={!inputs.file}
                 >
                   Upload
