@@ -12,8 +12,10 @@ import {
   ListItemIcon,
   ListItemText,
   TextField,
+  IconTextField,
   Toolbar,
   Typography,
+  InputAdornment,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import {useContext, useEffect, useState} from 'react';
@@ -91,12 +93,22 @@ const Nav = () => {
                   fontFamily: 'Montserrat',
                 }}
               >
-                <TravelExploreOutlined />
+
 
                 <TextField
                   label="search"
                   value={hakusana}
                   onChange={handleSearch}
+                  sx={{color: 'white.main'}}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment>
+                        <IconButton>
+                          <TravelExploreOutlined />
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
                 ></TextField>
               </ListItem>
               <Button
