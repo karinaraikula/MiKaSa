@@ -11,10 +11,10 @@ import {Link} from 'react-router-dom';
 import {mediaUrl} from '../utils/variables';
 import {safeParseJson} from '../utils/functions';
 import {
-  BookmarkAdd,
-  BookmarkAdded,
   Delete,
   Edit,
+  Favorite,
+  FavoriteBorder,
   Visibility,
 } from '@mui/icons-material';
 
@@ -116,52 +116,45 @@ const MediaRow = ({file, userId, deleteMedia}) => {
           <>
             <Box
               sx={{
-                display: 'inline-flex',
+                display: 'flex',
                 flexDirection: 'row',
               }}
             >
+              {!userLike ? (
+                <Button
+                  state={{file}}
+                  title="Like"
+                  onClick={createFavourite}
+                >
+                  <Favorite />
+                </Button>
+              ) : (
+                <Button
+                  color="harmaa"
+                  state={{file}}
+                  title="Unlike"
+                  onClick={removeFavourite}
+                >
+                  <FavoriteBorder />
+                </Button>
+              )}
               <Typography
                 sx={{
-                  padding: '1rem',
+                  padding: '0.5rem',
                   fontSize: '1.4rem',
                   fontWeight: 'bold',
+                  ml: '-1rem',
                 }}
                 color="white"
               >
                 {likes.length}
               </Typography>
             </Box>
-            <Box
-              sx={{
-                display: 'inline-flex',
-                flexDirection: 'row',
-                padding: '0 1rem',
-              }}
-            >
-              {!userLike ? (
-                <Button
-                  variant="contained"
-                  state={{file}}
-                  title="Like"
-                  onClick={createFavourite}
-                >
-                  <BookmarkAdd />
-                </Button>
-              ) : (
-                <Button
-                  variant="outlined"
-                  state={{file}}
-                  title="Unlike"
-                  onClick={removeFavourite}
-                >
-                  <BookmarkAdded />
-                </Button>
-              )}
-            </Box>
           </>
         }
       ></ImageListItemBar>
       <ImageListItemBar
+
         actionIcon={
           <>
             <Button

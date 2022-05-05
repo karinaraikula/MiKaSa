@@ -126,6 +126,7 @@ const Upload = () => {
       >
         <Grid
           container
+          spacing={5}
           flex
           sx={{
             justifyContent: 'center',

@@ -13,6 +13,8 @@ const Reviews = () => {
           width: '97%',
           margin: '1rem auto',
           padding: '1rem',
+          backgroundColor: '#FAF6F6',
+
         }}
       >
         <CardContent
