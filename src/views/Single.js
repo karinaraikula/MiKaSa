@@ -17,7 +17,7 @@ import {safeParseJson} from '../utils/functions';
 import BackButton from '../components/BackButton';
 import {useEffect, useState, useContext} from 'react';
 import {useTag, useUser} from '../hooks/ApiHooks';
-import {BookmarkAdd, BookmarkAdded} from '@mui/icons-material';
+import {Favorite, FavoriteBorder} from '@mui/icons-material';
 import {useFavourite} from '../hooks/ApiHooks';
 import {MediaContext} from '../contexts/MediaContext';
 
@@ -146,25 +146,31 @@ const Single = () => {
                   </ListItemAvatar>
                   <Typography variant="subtitle2">{owner.username}</Typography>
                 </ListItem>
-                <Typography>Likes count: {likes.length}</Typography>
+                <Box
+                  display="flex"
+                  alignItems="center"
+                >
+                  <Box>
+                    {!userLike ? (
                 <Button
-                  variant="contained"
                   state={{file}}
-                  disabled={userLike}
                   title="Like"
                   onClick={createFavourite}
                 >
-                  <BookmarkAdd />
+                  <Favorite/>
                 </Button>
+              ) : (
                 <Button
-                  variant="outlined"
                   state={{file}}
-                  disabled={!userLike}
                   title="Unlike"
                   onClick={removeFavourite}
                 >
-                  <BookmarkAdded />
+                  <FavoriteBorder />
                 </Button>
+              )}
+                  </Box>
+                  <Typography>Likes count: {likes.length}</Typography>
+                </Box>
               </Container>
             </List>
             <CardMedia

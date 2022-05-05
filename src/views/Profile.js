@@ -50,6 +50,7 @@ const Profile = () => {
         <Card sx={{
           margin: '1rem auto',
           padding: '1rem',
+          backgroundColor: '#FAF6F6',
         }}>
           <CardContent>
             <List>

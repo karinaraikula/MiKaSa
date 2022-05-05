@@ -128,7 +128,6 @@ const Nav = () => {
       {user && (
         <>
           <Drawer
-            sx={{width: '200px'}}
             variant="permanent" anchor="left">
             <Button component={Link}
               to="/home">
@@ -137,20 +136,20 @@ const Nav = () => {
             <List>
               <ListItemButton component={Link} to={'/home'}>
                 <ListItemIcon>
-                  <Home />
+                  <Home color="primary" />
                 </ListItemIcon>
                 <ListItemText primary="Home" />
               </ListItemButton>
 
               <ListItemButton component={Link} to="/profile">
                 <ListItemIcon>
-                  <AccountCircle />
+                  <AccountCircle color="primary" />
                 </ListItemIcon>
                 <ListItemText primary="Profile" />
               </ListItemButton>
               <ListItemButton component={Link} to="/Favourites">
                 <ListItemIcon>
-                  <StarRate />
+                  <StarRate color="primary" />
                 </ListItemIcon>
                 <ListItemText primary="Favourites" />
               </ListItemButton>
@@ -158,19 +157,19 @@ const Nav = () => {
               <Divider />
               <ListItemButton component={Link} to="/inspiration">
                 <ListItemIcon>
-                  <AirplaneTicket />
+                  <AirplaneTicket color="primary" />
                 </ListItemIcon>
                 <ListItemText primary="Inspiration" />
               </ListItemButton>
               <ListItemButton component={Link} to="/Reviews">
                 <ListItemIcon>
-                  <BeachAccess />
+                  <BeachAccess color="primary" />
                 </ListItemIcon>
                 <ListItemText primary="Reviews" />
               </ListItemButton>
               <ListItemButton component={Link} to="/Tips">
                 <ListItemIcon>
-                  <StarRate />
+                  <StarRate color="primary" />
                 </ListItemIcon>
                 <ListItemText primary="Tips" />
               </ListItemButton>
