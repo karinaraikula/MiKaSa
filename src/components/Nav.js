@@ -69,16 +69,7 @@ const Nav = () => {
         <>
           <AppBar position="static" sx={{width: '100%'}}>
             <Toolbar>
-              <Typography
-                variant="h6"
-                component="div"
-                sx={{
-                  alignSelf: 'left',
-                  fontFamily: 'Montserrat',
-                }}
-              >
-                MiKaSa
-              </Typography>
+              <img src={'logo2.png'} alt="Logo" />
 
               <Button
                 component={Link}
@@ -121,8 +112,10 @@ const Nav = () => {
       )}
       {user && (
         <>
-          <Drawer sx={{width: '200px'}} variant="permanent" anchor="left">
-            <img src={'logo192.png'} alt="Logo" />
+          <Drawer
+            sx={{width: '200px'}}
+            variant="permanent" anchor="left">
+            <img src={'logo1.png'} alt="Logo" />
             <List>
               <ListItemButton component={Link} to={'/home'}>
                 <ListItemIcon>

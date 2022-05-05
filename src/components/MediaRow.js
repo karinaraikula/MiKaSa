@@ -126,7 +126,7 @@ const MediaRow = ({file, userId, deleteMedia}) => {
                   fontSize: '1.4rem',
                   fontWeight: 'bold',
                 }}
-                color="secondary"
+                color="white"
               >
                 {likes.length}
               </Typography>
@@ -180,7 +180,7 @@ const MediaRow = ({file, userId, deleteMedia}) => {
                   to={'/modify'}
                   state={{file}}
                 >
-                  <Edit />
+                  <Edit/>
                 </Button>
                 <Button variant="text" onClick={doDelete}>
                   <Delete />
