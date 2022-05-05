@@ -3,6 +3,7 @@ import LoginForm from '../components/LoginForm';
 import RegisterForm from '../components/RegisterForm';
 import {useState} from 'react';
 import {Button, Container, Box, Divider} from '@mui/material';
+// import Image from '../img/taustakuva.jpg';
 
 const Login = () => {
   const [toggle, setToggle] = useState(true);

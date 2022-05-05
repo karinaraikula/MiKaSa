@@ -10,6 +10,9 @@ const themeOptions = {
     harmaa: {
       main: '#F5F5F5',
     },
+    white: {
+      main: '#FFFFFF',
+    },
   },
   typography: {
     fontFamily: 'Montserrat',
