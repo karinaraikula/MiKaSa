@@ -16,7 +16,7 @@ import {
 import {safeParseJson} from '../utils/functions';
 import BackButton from '../components/BackButton';
 import {useEffect, useState, useContext} from 'react';
-import {useTag} from '../hooks/ApiHooks';
+import {useTag, useUser} from '../hooks/ApiHooks';
 import {BookmarkAdd, BookmarkAdded} from '@mui/icons-material';
 import {useFavourite} from '../hooks/ApiHooks';
 import {MediaContext} from '../contexts/MediaContext';
@@ -28,6 +28,7 @@ const Single = () => {
   const {postFavourite, getFavouritesByFileId, deleteFavourite} =
     useFavourite();
   const [avatar, setAvatar] = useState({});
+  const [owner, setOwner] = useState({});
   const location = useLocation();
   console.log(location);
   const file = location.state.file;
@@ -55,6 +56,21 @@ const Single = () => {
     } catch (err) {
       // console.log(err);
     }
+  };
+
+  const {getUserById} = useUser();
+
+  const fetchUsername = async () => {
+    try {
+      if (file) {
+        const userdata = await getUserById(
+            file.user_id,
+            localStorage.getItem('token'),
+        );
+        console.log(userdata);
+        setOwner(userdata);
+      }
+    } catch (err) {}
   };
 
   const fetchLikes = async () => {
@@ -95,6 +111,7 @@ const Single = () => {
 
   useEffect(() => {
     fetchAvatar();
+    fetchUsername();
   }, []);
 
   console.log(avatar);
@@ -125,9 +142,9 @@ const Single = () => {
               <Container flex>
                 <ListItem>
                   <ListItemAvatar>
-                    <Avatar variant={'circle'} src={avatar.filename} />
+                    <Avatar variant="circle" src={avatar.filename} />
                   </ListItemAvatar>
-                  <Typography variant="subtitle2">{file.user_id}</Typography>
+                  <Typography variant="subtitle2">{owner.username}</Typography>
                 </ListItem>
                 <Typography>Likes count: {likes.length}</Typography>
                 <Button

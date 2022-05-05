@@ -138,25 +138,25 @@ const MediaRow = ({file, userId, deleteMedia}) => {
                 padding: '0 1rem',
               }}
             >
-              <Button
-                sx={{padding: 0}}
-                variant="contained"
-                state={{file}}
-                disabled={userLike}
-                title="Like"
-                onClick={createFavourite}
-              >
-                <BookmarkAdd />
-              </Button>
-              <Button
-                variant="outlined"
-                state={{file}}
-                disabled={!userLike}
-                title="Unlike"
-                onClick={removeFavourite}
-              >
-                <BookmarkAdded />
-              </Button>
+              {!userLike ? (
+                <Button
+                  variant="contained"
+                  state={{file}}
+                  title="Like"
+                  onClick={createFavourite}
+                >
+                  <BookmarkAdd />
+                </Button>
+              ) : (
+                <Button
+                  variant="outlined"
+                  state={{file}}
+                  title="Unlike"
+                  onClick={removeFavourite}
+                >
+                  <BookmarkAdded />
+                </Button>
+              )}
             </Box>
           </>
         }

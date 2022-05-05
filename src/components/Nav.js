@@ -151,12 +151,6 @@ const Nav = () => {
                 </ListItemIcon>
                 <ListItemText primary="Inspiration" />
               </ListItemButton>
-              <ListItemButton component={Link} to="/questions">
-                <ListItemIcon>
-                  <Help />
-                </ListItemIcon>
-                <ListItemText primary="Questions" />
-              </ListItemButton>
               <ListItemButton component={Link} to="/Reviews">
                 <ListItemIcon>
                   <BeachAccess />
