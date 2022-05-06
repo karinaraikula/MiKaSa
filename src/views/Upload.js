@@ -1,5 +1,6 @@
 /* eslint-disable indent */
 import {
+  Box,
   Button,
   Card,
   CircularProgress,
@@ -15,6 +16,7 @@ import {useState, useEffect} from 'react';
 import {appID} from '../utils/variables';
 import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import BackButton from '../components/BackButton';
+import {AirplaneTicket, BeachAccess, StarRate} from '@mui/icons-material';
 
 const Upload = () => {
   const [preview, setPreview] = useState('logo192.png');
@@ -117,7 +119,7 @@ const Upload = () => {
         xs={12}
         sm={8}
         sx={{
-          width: '70%',
+          width: '50%',
           margin: 'auto',
           padding: '4vh',
           justifyContent: 'center',
@@ -126,7 +128,7 @@ const Upload = () => {
       >
         <Grid
           container
-          spacing={5}
+          spacing={1}
           flex
           sx={{
             justifyContent: 'center',
@@ -137,34 +139,54 @@ const Upload = () => {
               Upload
             </Typography>
           </Grid>
-          <Grid item xs={12} sm={8}
-           sx={{
-            textAlign: 'left',
-            padding: '1em',
-            display: 'flex',
-            flexWrap: 'nowrap',
-            flexDirection: 'column'}}>
-            <input
-              type="radio"
-              value="Inspiration"
-              name="Radiobutton"
-              onChange={handleRadiobuttonChange}
-            />{' '}
-            Inspiration
-            <input
-              type="radio"
-              value="Reviews"
-              name="Radiobutton"
-              onChange={handleRadiobuttonChange}
-            />{' '}
-            Reviews
-            <input
-              type="radio"
-              value="Tips"
-              name="Radiobutton"
-              onChange={handleRadiobuttonChange}
-            />{' '}
-            Tips
+          <Grid
+            item
+            xs={12}
+            sm={8}
+            sx={{
+              textAlign: 'left',
+              padding: '0em',
+              display: 'flex',
+              flexWrap: 'nowrap',
+              flexDirection: 'column',
+            }}
+          >
+             <Box sx={{padding: '1rem 0'}}>
+            <AirplaneTicket color="primary"
+              sx={{padding: '0 0.3rem', margin: '-0.2rem 0'}}/>
+              <input
+                type="radio"
+                value="Inspiration"
+                name="Radiobutton"
+                onChange={handleRadiobuttonChange}
+              />{' '}
+
+              Inspiration
+            </Box>
+            <Box sx={{padding: '1rem 0'}}>
+            <BeachAccess color="primary"
+            sx={{padding: '0 0.3rem', margin: '-0.2rem 0'}}/>
+              <input
+                type="radio"
+                value="Reviews"
+                name="Radiobutton"
+                onChange={handleRadiobuttonChange}
+              />{' '}
+
+              Reviews
+            </Box>
+            <Box sx={{padding: '1rem 0'}}>
+            <StarRate color="primary"
+            sx={{padding: '0 0.3rem', margin: '-0.2rem 0'}}/>
+              <input
+                type="radio"
+                value="Tips"
+                name="Radiobutton"
+                onChange={handleRadiobuttonChange}
+
+              />{' '}
+              Tips
+            </Box>
           </Grid>
           <Grid item xs={12} sm={8} sx={{}}>
             <ValidatorForm onSubmit={handleSubmit}>
@@ -176,7 +198,7 @@ const Upload = () => {
                 value={inputs.title}
                 validators={validators.title}
                 errorMessages={errorMessages.title}
-                sx={{mt: 2, mb: 2}}
+                sx={{mt: 0, mb: 2}}
               />
               <TextareaAutosize
                 style={{width: '100%', borderRadius: 10}}

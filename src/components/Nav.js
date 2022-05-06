@@ -25,16 +25,9 @@ import {Favorite} from '@mui/icons-material';
 import {
   Home,
   AccountCircle,
-  CloudUpload,
-  Folder,
   AirplaneTicket,
   BeachAccess,
-  QuestionMark,
   StarRate,
-  Help,
-  AddCircleOutlineRounded,
-  LogoutRounded,
-  Search,
   TravelExploreOutlined,
   AddToPhotos,
 } from '@mui/icons-material';
@@ -71,7 +64,7 @@ const Nav = () => {
       {user && (
         <>
           <AppBar position="static" sx={{width: '100%'}}>
-            <Toolbar>
+            <Toolbar sx={{}}>
               <ListItem
                 sx={{
                   fontFamily: 'Montserrat',
@@ -79,6 +72,7 @@ const Nav = () => {
               >
                 <TextField
                   color="white"
+                  focused
                   label="search"
                   value={hakusana}
                   onChange={handleSearch}
