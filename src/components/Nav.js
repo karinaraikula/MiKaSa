@@ -16,11 +16,12 @@ import {
   Typography,
   InputAdornment,
 } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import '../App.css';
 import {useContext, useEffect, useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import {MediaContext} from '../contexts/MediaContext';
 import {useUser} from '../hooks/ApiHooks';
+import {Favorite} from '@mui/icons-material';
 import {
   Home,
   AccountCircle,
@@ -77,7 +78,7 @@ const Nav = () => {
                 }}
               >
                 <TextField
-                  color='white'
+                  color="white"
                   label="search"
                   value={hakusana}
                   onChange={handleSearch}
@@ -85,7 +86,7 @@ const Nav = () => {
                     endAdornment: (
                       <InputAdornment>
                         <IconButton>
-                          <TravelExploreOutlined color="harmaa"/>
+                          <TravelExploreOutlined color="harmaa" />
                         </IconButton>
                       </InputAdornment>
                     ),
@@ -101,12 +102,11 @@ const Nav = () => {
                     fontFamily: 'Montserrat',
                   }}
                 >
-                  <AddToPhotos color="harmaa"fontSize="large" />
+                  <AddToPhotos color="harmaa" fontSize="large" />
                 </Button>
 
                 <Box d="flex" sx={{ml: '7rem'}}>
-                  <Button component={Link}
-                    to="/home">
+                  <Button component={Link} to="/home">
                     <img src={'logo2.png'} alt="Logo" />
                   </Button>
                 </Box>
@@ -128,10 +128,8 @@ const Nav = () => {
       )}
       {user && (
         <>
-          <Drawer
-            variant="permanent" anchor="left">
-            <Button component={Link}
-              to="/home">
+          <Drawer variant="permanent" anchor="left">
+            <Button component={Link} to="/home">
               <img src={'logo1.png'} alt="Logo" />
             </Button>
             <List>
@@ -150,7 +148,7 @@ const Nav = () => {
               </ListItemButton>
               <ListItemButton component={Link} to="/Favourites">
                 <ListItemIcon>
-                  <StarRate color="primary" />
+                  <Favorite color="primary" />
                 </ListItemIcon>
                 <ListItemText primary="Favourites" />
               </ListItemButton>

@@ -16,7 +16,7 @@ import {
   ListItemText,
   Typography,
 } from '@mui/material';
-import {AccountCircle, Badge, ContactMail, Folder} from '@mui/icons-material';
+import {AccountCircle, Badge, ContactMail, Favorite} from '@mui/icons-material';
 import BackButton from '../components/BackButton';
 import {Link} from 'react-router-dom';
 
@@ -47,11 +47,13 @@ const Profile = () => {
         {`${user.username}'s profile`}
       </Typography>
       {user && (
-        <Card sx={{
-          margin: '1rem auto',
-          padding: '1rem',
-          backgroundColor: '#FAF6F6',
-        }}>
+        <Card
+          sx={{
+            margin: '1rem auto',
+            padding: '1rem',
+            backgroundColor: '#FAF6F6',
+          }}
+        >
           <CardContent>
             <List>
               <Box sx={{display: 'flex'}}>
@@ -90,7 +92,7 @@ const Profile = () => {
                   </ListItem>
                   <ListItemButton component={Link} to="/favourites">
                     <ListItemIcon>
-                      <Folder />
+                      <Favorite />
                     </ListItemIcon>
                     <ListItemText primary="Favourites" />
                   </ListItemButton>
