@@ -145,7 +145,7 @@ const MediaRow = ({file, userId, deleteMedia}) => {
                   fontWeight: 'bold',
                   ml: '-1rem',
                 }}
-                color="white"
+                color='white.main'
               >
                 {likes.length}
               </Typography>

@@ -12,7 +12,6 @@ import {
   ListItemIcon,
   ListItemText,
   TextField,
-  IconTextField,
   Toolbar,
   Typography,
   InputAdornment,
@@ -36,6 +35,7 @@ import {
   LogoutRounded,
   Search,
   TravelExploreOutlined,
+  AddToPhotos,
 } from '@mui/icons-material';
 
 const Nav = () => {
@@ -71,46 +71,47 @@ const Nav = () => {
         <>
           <AppBar position="static" sx={{width: '100%'}}>
             <Toolbar>
-              <Button component={Link}
-                to="/home">
-                <img src={'logo2.png'} alt="Logo" />
-              </Button>
-
-              <Button
-                component={Link}
-                to="/upload"
-                color="inherit"
-                sx={{
-                  alignSelf: 'right',
-                  fontFamily: 'Montserrat',
-                }}
-              >
-                <AddCircleOutlineRounded fontSize="large" />
-                <ListItemText primary="" />
-              </Button>
               <ListItem
                 sx={{
                   fontFamily: 'Montserrat',
                 }}
               >
-
-
                 <TextField
+                  color='white'
                   label="search"
                   value={hakusana}
                   onChange={handleSearch}
-                  sx={{color: 'white.main'}}
                   InputProps={{
                     endAdornment: (
                       <InputAdornment>
                         <IconButton>
-                          <TravelExploreOutlined />
+                          <TravelExploreOutlined color="harmaa"/>
                         </IconButton>
                       </InputAdornment>
                     ),
                   }}
                 ></TextField>
+
+                <Button
+                  component={Link}
+                  to="/upload"
+                  color="inherit"
+                  sx={{
+                    alignSelf: 'right',
+                    fontFamily: 'Montserrat',
+                  }}
+                >
+                  <AddToPhotos color="harmaa"fontSize="large" />
+                </Button>
+
+                <Box d="flex" sx={{ml: '7rem'}}>
+                  <Button component={Link}
+                    to="/home">
+                    <img src={'logo2.png'} alt="Logo" />
+                  </Button>
+                </Box>
               </ListItem>
+
               <Button
                 component={Link}
                 to={user ? '/logout' : '/'}
