@@ -122,20 +122,20 @@ const MediaRow = ({file, userId, deleteMedia}) => {
             >
               {!userLike ? (
                 <Button
+                  color="harmaa"
                   state={{file}}
                   title="Like"
                   onClick={createFavourite}
                 >
-                  <Favorite />
+                  <FavoriteBorder />
                 </Button>
               ) : (
                 <Button
-                  color="harmaa"
                   state={{file}}
                   title="Unlike"
                   onClick={removeFavourite}
                 >
-                  <FavoriteBorder />
+                  <Favorite />
                 </Button>
               )}
               <Typography
