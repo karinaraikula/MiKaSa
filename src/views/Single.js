@@ -146,28 +146,26 @@ const Single = () => {
                   </ListItemAvatar>
                   <Typography variant="subtitle2">{owner.username}</Typography>
                 </ListItem>
-                <Box
-                  display="flex"
-                  alignItems="center"
-                >
+                <Box display="flex" alignItems="center">
                   <Box>
                     {!userLike ? (
-                <Button
-                  state={{file}}
-                  title="Like"
-                  onClick={createFavourite}
-                >
-                  <Favorite/>
-                </Button>
-              ) : (
-                <Button
-                  state={{file}}
-                  title="Unlike"
-                  onClick={removeFavourite}
-                >
-                  <FavoriteBorder />
-                </Button>
-              )}
+                      <Button
+                        state={{file}}
+                        title="Like"
+                        onClick={createFavourite}
+                      >
+                        <FavoriteBorder />
+                      </Button>
+                    ) : (
+                      <Button
+                        state={{file}}
+                        title="Unlike"
+                        onClick={removeFavourite}
+                      >
+                        {' '}
+                        <Favorite />
+                      </Button>
+                    )}
                   </Box>
                   <Typography>Likes count: {likes.length}</Typography>
                 </Box>

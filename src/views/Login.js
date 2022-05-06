@@ -2,15 +2,27 @@
 import LoginForm from '../components/LoginForm';
 import RegisterForm from '../components/RegisterForm';
 import {useState} from 'react';
-import {Button, Container, Box, Divider} from '@mui/material';
+import {Button, Container, Box, Divider, Card} from '@mui/material';
+import '../App.css';
 // import Image from '../img/taustakuva.jpg';
 
 const Login = () => {
   const [toggle, setToggle] = useState(true);
   return (
-    <Container component="main" maxWidth="sm" >
-      <Box bgcolor="harmaa.main" sx={{p: 2}}>
-        <Box sx={{marginTop: 8, display: 'flex', flexDirection: 'column', alignItems: 'center'}} >
+    <Container component="main" maxWidth="xs">
+      <Card
+        bgcolor="harmaa.main"
+        sx={{p: 2, boxShadow: '5', backgroundColor: '#FAF6F6'}}
+        className="loginContainer"
+      >
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
           {toggle ? <LoginForm /> : <RegisterForm setToggle={setToggle} />}
           <Divider style={{width: '100%'}}>or</Divider>
           <Button
@@ -25,7 +37,7 @@ const Login = () => {
             {toggle ? 'Register' : 'Login'}
           </Button>
         </Box>
-      </Box>
+      </Card>
     </Container>
   );
 };
