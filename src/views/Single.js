@@ -12,6 +12,7 @@ import {
   Box,
   Button,
   Container,
+  Grid,
 } from '@mui/material';
 import {safeParseJson} from '../utils/functions';
 import BackButton from '../components/BackButton';
@@ -122,77 +123,84 @@ const Single = () => {
       <Typography component="h3" variant="h3">
         {`${file.title}`}
       </Typography>
-      <Box
-        sx={{
-          justifyContent: 'center',
-          textAlign: 'center',
-          width: '97%',
-          margin: '1rem auto',
-          padding: '1rem',
-        }}
-      >
-        <CardContent
-          sx={{
-            margin: 'auto',
-            width: '50%',
-          }}
-        >
-          <Card>
-            <List>
-              <Container flex>
-                <ListItem>
-                  <ListItemAvatar>
-                    <Avatar variant="circle" src={avatar.filename} />
-                  </ListItemAvatar>
-                  <Typography variant="subtitle2">{owner.username}</Typography>
-                </ListItem>
-                <Box display="flex" alignItems="center">
-                  <Box>
-                    {!userLike ? (
-                      <Button
-                        state={{file}}
-                        title="Like"
-                        onClick={createFavourite}
-                      >
-                        <FavoriteBorder />
-                      </Button>
-                    ) : (
-                      <Button
-                        state={{file}}
-                        title="Unlike"
-                        onClick={removeFavourite}
-                      >
-                        {' '}
-                        <Favorite />
-                      </Button>
-                    )}
-                  </Box>
-                  <Typography>Likes count: {likes.length}</Typography>
-                </Box>
-              </Container>
-            </List>
-            <CardMedia
-              component={file.media_type === 'image' ? 'img' : file.media_type}
-              controls={true}
-              poster={mediaUrl + file.screenshot}
-              src={mediaUrl + file.filename}
-              alt={file.title}
+      <Grid container flex>
+        <Grid item xs={12} md={6} sx={{margin: 'auto'}}>
+          <Box
+            sx={{
+              justifyContent: 'center',
+              textAlign: 'center',
+              width: '97%',
+              margin: '1rem auto',
+              padding: '1rem',
+            }}
+          >
+            <CardContent
               sx={{
-                height: '60vh',
-                filter: `
+                margin: 'auto',
+              }}
+            >
+              <Card>
+                <List>
+                  <Container flex>
+                    <ListItem>
+                      <ListItemAvatar>
+                        <Avatar variant="circle" src={avatar.filename} />
+                      </ListItemAvatar>
+                      <Typography variant="subtitle2">
+                        {owner.username}
+                      </Typography>
+                    </ListItem>
+                    <Box display="flex" alignItems="center">
+                      <Box>
+                        {!userLike ? (
+                          <Button
+                            state={{file}}
+                            title="Like"
+                            onClick={createFavourite}
+                          >
+                            <FavoriteBorder />
+                          </Button>
+                        ) : (
+                          <Button
+                            state={{file}}
+                            title="Unlike"
+                            onClick={removeFavourite}
+                          >
+                            {' '}
+                            <Favorite />
+                          </Button>
+                        )}
+                      </Box>
+                      <Typography>Likes count: {likes.length}</Typography>
+                    </Box>
+                  </Container>
+                </List>
+                <CardMedia
+                  component={
+                    file.media_type === 'image' ? 'img' : file.media_type
+                  }
+                  controls={true}
+                  poster={mediaUrl + file.screenshot}
+                  src={mediaUrl + file.filename}
+                  alt={file.title}
+                  sx={{
+                    height: '60vh',
+                    filter: `
           brightness(${filters.brightness}%)
           contrast(${filters.contrast}%)
           saturate(${filters.saturation}%)
           sepia(${filters.sepia}%)
           `,
-              }}
-            />
-            <CardContent>
-              <Typography>{description}</Typography>
+                  }}
+                />
+                <CardContent>
+                  <Typography>{description}</Typography>
+                </CardContent>
+              </Card>
             </CardContent>
-          </Card>
-        </CardContent>
-      </Box>
+          </Box>
+        </Grid>
+      </Grid>
     </>
   );
 };

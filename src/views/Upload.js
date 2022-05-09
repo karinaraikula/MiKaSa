@@ -115,31 +115,32 @@ const Upload = () => {
   return (
     <>
       <BackButton />
-      <Card
+      <Grid
+        item
+        container
         xs={12}
-        sm={8}
+        md={8}
+        flex
+        spacing={1}
         sx={{
-          width: '50%',
-          margin: 'auto',
-          padding: '4vh',
           justifyContent: 'center',
-          boxShadow: '3',
+          margin: 'auto',
         }}
       >
-        <Grid
-          container
-          spacing={1}
-          flex
+        <Card
           sx={{
+            margin: 'auto',
+            padding: '4vh',
             justifyContent: 'center',
+            boxShadow: '3',
           }}
         >
-          <Grid item xs={12} sm={8} sx={{textAlign: 'center'}}>
+          <Box>
             <Typography component="h1" variant="h2" gutterBottom>
               Upload
             </Typography>
-          </Grid>
-          <Grid
+            </Box>
+          <Box
             item
             xs={12}
             sm={8}
@@ -151,44 +152,47 @@ const Upload = () => {
               flexDirection: 'column',
             }}
           >
-             <Box sx={{padding: '1rem 0'}}>
-            <AirplaneTicket color="primary"
-              sx={{padding: '0 0.3rem', margin: '-0.2rem 0'}}/>
+            <Box sx={{padding: '1rem 0'}}>
+              <AirplaneTicket
+                color="primary"
+                sx={{padding: '0 0.3rem', margin: '-0.2rem 0'}}
+              />
               <input
                 type="radio"
                 value="Inspiration"
                 name="Radiobutton"
                 onChange={handleRadiobuttonChange}
               />{' '}
-
               Inspiration
             </Box>
             <Box sx={{padding: '1rem 0'}}>
-            <BeachAccess color="primary"
-            sx={{padding: '0 0.3rem', margin: '-0.2rem 0'}}/>
+              <BeachAccess
+                color="primary"
+                sx={{padding: '0 0.3rem', margin: '-0.2rem 0'}}
+              />
               <input
                 type="radio"
                 value="Reviews"
                 name="Radiobutton"
                 onChange={handleRadiobuttonChange}
               />{' '}
-
               Reviews
             </Box>
             <Box sx={{padding: '1rem 0'}}>
-            <StarRate color="primary"
-            sx={{padding: '0 0.3rem', margin: '-0.2rem 0'}}/>
+              <StarRate
+                color="primary"
+                sx={{padding: '0 0.3rem', margin: '-0.2rem 0'}}
+              />
               <input
                 type="radio"
                 value="Tips"
                 name="Radiobutton"
                 onChange={handleRadiobuttonChange}
-
               />{' '}
               Tips
             </Box>
-          </Grid>
-          <Grid item xs={12} sm={8} sx={{}}>
+          </Box>
+          <Box item xs={12} sm={8} sx={{}}>
             <ValidatorForm onSubmit={handleSubmit}>
               <TextValidator
                 fullWidth
@@ -237,15 +241,15 @@ const Upload = () => {
                 </Button>
               )}
             </ValidatorForm>
-          </Grid>
-        </Grid>
+          </Box>
+
         {inputs.file && (
-          <Grid container sx={{justifyContent: 'center'}}>
-            <Grid center item xs={12} sm={4}>
+          <Grid container flex sx={{justifyContent: 'center'}}>
+            <Grid center item xs={12} sm={8}>
               <img
                 style={{
                   width: '100%',
-
+                  margin: 'auto',
                   filter: `
               brightness(${filterInputs.brightness}%)
               contrast(${filterInputs.contrast}%)
@@ -309,7 +313,8 @@ const Upload = () => {
             </Grid>
           </Grid>
         )}
-      </Card>
+        </Card>
+      </Grid>
     </>
   );
 };

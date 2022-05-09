@@ -5,7 +5,7 @@ font-family: 'Montserrat'
 }
 
 body{
-  margin: 0 0 0 10rem;
+  margin: 0;
   padding: 0;
 background-color: #F5F5F5;
 }
@@ -23,6 +23,3 @@ button {
   padding: 0;
 }
 
-.loginContainer{
-  margin: 3rem 0 0 -10rem;
-}

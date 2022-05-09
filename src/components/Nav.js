@@ -21,7 +21,7 @@ import {useContext, useEffect, useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import {MediaContext} from '../contexts/MediaContext';
 import {useUser} from '../hooks/ApiHooks';
-import {Favorite} from '@mui/icons-material';
+import {Favorite, Logout, MenuOpen} from '@mui/icons-material';
 
 import {MenuBook} from '@mui/icons-material';
 import {
@@ -67,41 +67,45 @@ const Nav = () => {
         <>
           <AppBar position="static">
             <Toolbar>
-              <IconButton
-                size="large"
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                sx={{mr: 2}}
-                onClick={() => {
-                  setOpen(!open);
-                }}
-              >
-                <MenuBook />
-              </IconButton>
-              <Box d="flex" sx={{ml: '7rem'}}>
-                <Button component={Link} to="/home">
-                  <img src={'logo2.png'} alt="Logo" />
-                </Button>
-              </Box>
-              <Button
-                component={Link}
-                to="/upload"
-                color="inherit"
+              <Box
                 sx={{
-                  alignSelf: 'right',
-                  fontFamily: 'Montserrat',
+                  width: '100%',
+                  display: 'flex',
+                  alignContent: 'center',
+                  justifyContent: 'space-between',
                 }}
               >
-                <AddToPhotos color="harmaa" fontSize="large" />
-              </Button>
-              <Button
-                component={Link}
-                to={user ? '/logout' : '/'}
-                color="inherit"
-              >
-                {user ? 'Logout' : 'Login'}
-              </Button>
+                <Box sx={{display: 'flex'}}>
+                  <IconButton
+                    size="large"
+                    edge="start"
+                    color="inherit"
+                    aria-label="menu"
+                    onClick={() => {
+                      setOpen(!open);
+                    }}
+                  >
+                    <MenuOpen color="harmaa" fontSize="large" />
+                  </IconButton>
+                </Box>
+                <Box sx={{display: 'flex'}}>
+                  <Button component={Link} to="/home">
+                    <img src={'logo2.png'} alt="Logo" />
+                  </Button>
+                </Box>
+                <Box sx={{display: 'flex'}}>
+                  <Button
+                    component={Link}
+                    to="/upload"
+                    color="inherit"
+                    sx={{
+                      fontFamily: 'Montserrat',
+                    }}
+                  >
+                    <AddToPhotos color="harmaa" fontSize="large" />
+                  </Button>
+                </Box>
+              </Box>
             </Toolbar>
           </AppBar>
         </>
@@ -177,6 +181,17 @@ const Nav = () => {
                 </ListItemIcon>
                 <ListItemText primary="Tips" />
               </ListItemButton>
+              <Divider />
+              <Button
+                component={Link}
+                to={user ? '/logout' : '/'}
+                color="primary"
+                variant="outlined"
+                sx={{margin: '0.7rem'}}
+              >
+                <Logout color="primary" />
+                {user ? 'Logout' : 'Login'}
+              </Button>
             </List>
           </Drawer>
         </>
