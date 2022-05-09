@@ -128,9 +128,11 @@ const MediaRow = ({file, userId, deleteMedia}) => {
                   onClick={createFavourite}
                 >
                   <FavoriteBorder />
+
                 </Button>
               ) : (
                 <Button
+
                   state={{file}}
                   title="Unlike"
                   onClick={removeFavourite}
@@ -145,7 +147,7 @@ const MediaRow = ({file, userId, deleteMedia}) => {
                   fontWeight: 'bold',
                   ml: '-1rem',
                 }}
-                color='white.main'
+                color="#FFFFFF"
               >
                 {likes.length}
               </Typography>

@@ -70,35 +70,6 @@ const Nav = () => {
                   fontFamily: 'Montserrat',
                 }}
               >
-                <TextField
-                  color="white"
-                  focused
-                  label="search"
-                  value={hakusana}
-                  onChange={handleSearch}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment>
-                        <IconButton>
-                          <TravelExploreOutlined color="harmaa" />
-                        </IconButton>
-                      </InputAdornment>
-                    ),
-                  }}
-                ></TextField>
-
-                <Button
-                  component={Link}
-                  to="/upload"
-                  color="inherit"
-                  sx={{
-                    alignSelf: 'right',
-                    fontFamily: 'Montserrat',
-                  }}
-                >
-                  <AddToPhotos color="harmaa" fontSize="large" />
-                </Button>
-
                 <Box d="flex" sx={{ml: '7rem'}}>
                   <Button component={Link} to="/home">
                     <img src={'logo2.png'} alt="Logo" />
@@ -108,14 +79,16 @@ const Nav = () => {
 
               <Button
                 component={Link}
-                to={user ? '/logout' : '/'}
+                to="/upload"
                 color="inherit"
                 sx={{
+                  alignSelf: 'right',
                   fontFamily: 'Montserrat',
                 }}
               >
-                {user ? 'Logout' : 'Login'}
+                <AddToPhotos color="harmaa" fontSize="large" />
               </Button>
+
             </Toolbar>
           </AppBar>
         </>
@@ -123,9 +96,25 @@ const Nav = () => {
       {user && (
         <>
           <Drawer variant="permanent" anchor="left">
-            <Button component={Link} to="/home">
+            <Button component={Link} to="/home" sx={{padding: '1rem'}}>
               <img src={'logo1.png'} alt="Logo" />
             </Button>
+            <TextField
+              style={{width: '90%', alignSelf: 'center'}}
+              focused
+              label="search"
+              value={hakusana}
+              onChange={handleSearch}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment>
+                    <IconButton>
+                      <TravelExploreOutlined color="primary" />
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            ></TextField>
             <List>
               <ListItemButton component={Link} to={'/home'}>
                 <ListItemIcon>
@@ -167,6 +156,16 @@ const Nav = () => {
                 <ListItemText primary="Tips" />
               </ListItemButton>
             </List>
+            <Button
+              component={Link}
+              to={user ? '/logout' : '/'}
+              color="inherit"
+              sx={{
+                fontFamily: 'Montserrat',
+              }}
+            >
+              {user ? 'Logout' : 'Login'}
+            </Button>
           </Drawer>
         </>
       )}

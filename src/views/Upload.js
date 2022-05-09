@@ -198,10 +198,10 @@ const Upload = () => {
                 value={inputs.title}
                 validators={validators.title}
                 errorMessages={errorMessages.title}
-                sx={{mt: 0, mb: 2}}
+                sx={{width: '100%', mt: 0, mb: 2}}
               />
               <TextareaAutosize
-                style={{width: '100%', borderRadius: 10}}
+                style={{width: '95%', borderRadius: 18, padding: 10}}
                 multiLine
                 minRows={4}
                 placeholder="description"
