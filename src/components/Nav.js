@@ -22,6 +22,8 @@ import {Link, useNavigate} from 'react-router-dom';
 import {MediaContext} from '../contexts/MediaContext';
 import {useUser} from '../hooks/ApiHooks';
 import {Favorite} from '@mui/icons-material';
+
+import {MenuBook} from '@mui/icons-material';
 import {
   Home,
   AccountCircle,
@@ -63,20 +65,25 @@ const Nav = () => {
     <Box>
       {user && (
         <>
-          <AppBar position="static" sx={{width: '100%'}}>
-            <Toolbar sx={{}}>
-              <ListItem
-                sx={{
-                  fontFamily: 'Montserrat',
+          <AppBar position="static">
+            <Toolbar>
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{mr: 2}}
+                onClick={() => {
+                  setOpen(!open);
                 }}
               >
-                <Box d="flex" sx={{ml: '7rem'}}>
-                  <Button component={Link} to="/home">
-                    <img src={'logo2.png'} alt="Logo" />
-                  </Button>
-                </Box>
-              </ListItem>
-
+                <MenuBook />
+              </IconButton>
+              <Box d="flex" sx={{ml: '7rem'}}>
+                <Button component={Link} to="/home">
+                  <img src={'logo2.png'} alt="Logo" />
+                </Button>
+              </Box>
               <Button
                 component={Link}
                 to="/upload"
@@ -88,14 +95,25 @@ const Nav = () => {
               >
                 <AddToPhotos color="harmaa" fontSize="large" />
               </Button>
-
+              <Button
+                component={Link}
+                to={user ? '/logout' : '/'}
+                color="inherit"
+              >
+                {user ? 'Logout' : 'Login'}
+              </Button>
             </Toolbar>
           </AppBar>
         </>
       )}
       {user && (
         <>
-          <Drawer variant="permanent" anchor="left">
+          <Drawer
+            open={open}
+            onClose={() => {
+              setOpen(!open);
+            }}
+          >
             <Button component={Link} to="/home" sx={{padding: '1rem'}}>
               <img src={'logo1.png'} alt="Logo" />
             </Button>
@@ -115,7 +133,11 @@ const Nav = () => {
                 ),
               }}
             ></TextField>
-            <List>
+            <List
+              onClick={() => {
+                setOpen(!open);
+              }}
+            >
               <ListItemButton component={Link} to={'/home'}>
                 <ListItemIcon>
                   <Home color="primary" />
@@ -156,23 +178,12 @@ const Nav = () => {
                 <ListItemText primary="Tips" />
               </ListItemButton>
             </List>
-            <Button
-              component={Link}
-              to={user ? '/logout' : '/'}
-              color="inherit"
-              sx={{
-                fontFamily: 'Montserrat',
-              }}
-            >
-              {user ? 'Logout' : 'Login'}
-            </Button>
           </Drawer>
         </>
       )}
     </Box>
   );
 };
-
 export default Nav;
 
 // skskskk
