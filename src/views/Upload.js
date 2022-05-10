@@ -8,6 +8,7 @@ import {
   Slider,
   TextareaAutosize,
   Typography,
+  Input,
 } from '@mui/material';
 import {useMedia, useTag} from '../hooks/ApiHooks';
 import {useNavigate} from 'react-router-dom';
@@ -17,6 +18,7 @@ import {appID} from '../utils/variables';
 import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import BackButton from '../components/BackButton';
 import {AirplaneTicket, BeachAccess, StarRate} from '@mui/icons-material';
+import AddIcon from '@mui/icons-material/Add';
 
 const Upload = () => {
   const [preview, setPreview] = useState('logo192.png');
@@ -217,14 +219,24 @@ const Upload = () => {
                 sx={{mt: 2, mb: 2}}
               />
 
-              <TextValidator
-                fullWidth
-                type="file"
-                name="file"
-                accept="image/*, video/*, audio/*"
-                onChange={handleInputChange}
-                sx={{mt: 2, mb: 2}}
-              />
+              <label htmlFor="contained-button-file">
+                <Input
+                  accept="image/*, video/*, audio/*"
+                  style={{display: 'none'}}
+                  id="contained-button-file"
+                  type="file"
+                  name="file"
+                  onChange={handleInputChange}
+                />
+                <Button
+                  variant="contained"
+                  fullWidth
+                  component="span"
+                  sx={{mt: 2, mb: 2}}>
+                    <AddIcon/>
+                  Choose a photo
+                </Button>
+              </label>
 
               {loading ? (
                 <CircularProgress />

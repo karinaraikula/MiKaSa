@@ -42,7 +42,7 @@ const LoginForm = () => {
       <Grid item xs={12}>
         <form onSubmit={handleSubmit}>
           <TextField
-            margin="normal"
+            sx={{mt: 1, mb: 1}}
             required
             fullWidth
             label="username"
@@ -52,7 +52,7 @@ const LoginForm = () => {
             value={inputs.username}
           />
           <TextField
-            margin="normal"
+            sx={{mt: 1, mb: 1}}
             required
             fullWidth
             label="password"

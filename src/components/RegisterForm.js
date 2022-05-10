@@ -101,7 +101,7 @@ const RegisterForm = ({setToggle}) => {
               value={inputs.username}
               validators={validators.username}
               errorMessages={errorMessages.username}
-              margin="normal"
+              sx={{mt: 1, mb: 1}}
               required
             />
             <TextValidator
@@ -114,7 +114,7 @@ const RegisterForm = ({setToggle}) => {
               value={inputs.password}
               validators={validators.password}
               errorMessages={errorMessages.password}
-              margin="normal"
+              sx={{mt: 1, mb: 1}}
               required
             />
             <TextValidator
@@ -127,7 +127,7 @@ const RegisterForm = ({setToggle}) => {
               value={inputs.confirm}
               validators={validators.confirm}
               errorMessages={errorMessages.confirm}
-              margin="normal"
+              sx={{mt: 1, mb: 1}}
               required
             />
             <TextValidator
@@ -140,7 +140,7 @@ const RegisterForm = ({setToggle}) => {
               value={inputs.email}
               validators={validators.email}
               errorMessages={errorMessages.email}
-              margin="normal"
+              sx={{mt: 1, mb: 1}}
               required
             />
             <TextValidator
@@ -152,7 +152,7 @@ const RegisterForm = ({setToggle}) => {
               value={inputs.full_name}
               validators={validators.full_name}
               errorMessages={errorMessages.full_name}
-              margin="normal"
+              sx={{mt: 1, mb: 1}}
               required
             />
             <Button fullWidth
