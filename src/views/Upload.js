@@ -164,6 +164,7 @@ const Upload = () => {
                 value="Inspiration"
                 name="Radiobutton"
                 onChange={handleRadiobuttonChange}
+                defaultChecked
               />{' '}
               Inspiration
             </Box>
